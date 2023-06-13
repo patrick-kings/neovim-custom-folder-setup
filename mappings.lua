@@ -85,9 +85,9 @@ M.debug = {
     },
     ["<leader>to"] = {
       function()
-        require("dapui").open()
+        require("dapui").toggle()
       end,
-      "open dap ui",
+      "toggle dap ui",
     },
   },
 }

@@ -27,6 +27,10 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = overrides.mason,
   },
+ {
+    "nvim-tree/nvim-tree.lua",
+    opts = overrides.nvimtree,
+  },
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
