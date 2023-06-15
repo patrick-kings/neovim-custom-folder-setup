@@ -27,12 +27,23 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = overrides.mason,
   },
- {
+  {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
+
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+      opts = function()
+        require "custom.configs.nvim-web-devicons"
+      end,
+      config = function(_, opts)
+        require("nvim-web-devicons").setup(opts)
+      end,
+    },
   },
   {
     "max397574/better-escape.nvim",
+    enabled = true,
     event = "InsertEnter",
     config = function()
       require("better_escape").setup()
@@ -43,8 +54,9 @@ local plugins = {
     -- format files on save
     "rust-lang/rust.vim",
     ft = "rust",
+    enabled = true,
     init = function()
-      vim.g.rustfmt_autosave = 1
+      -- vim.g.rustfmt_autosave = 1
     end,
   },
   {
@@ -54,7 +66,7 @@ local plugins = {
     dependencies = {
       { "neovim/nvim-lspconfig" },
       {
-        "mfussenegger/nvim-dap",
+        "rcarriga/nvim-dap-ui",
       },
       {
         "nvim-lua/plenary.nvim",
@@ -77,10 +89,9 @@ local plugins = {
         "folke/neodev.nvim",
         opts = {
           function()
-            local options = {
+            return {
               library = { plugins = { "nvim-dap-ui" }, types = true },
             }
-            return options
           end,
         },
         config = function(_, opts)
@@ -89,7 +100,7 @@ local plugins = {
       },
     },
     config = function()
-      require("dapui").setup()
+      require "custom.configs.nvim-dap"
     end,
   },
   {
