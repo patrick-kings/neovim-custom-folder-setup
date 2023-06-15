@@ -56,7 +56,7 @@ local plugins = {
     ft = "rust",
     enabled = true,
     init = function()
-      -- vim.g.rustfmt_autosave = 1
+      vim.g.rustfmt_autosave = 1
     end,
   },
   {
