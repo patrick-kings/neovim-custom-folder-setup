@@ -15,13 +15,12 @@ local plugins = {
       require "custom.configs.lspconfig"
     end,
   },
-
   {
-    -- parsers
+    -- parsers  --
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.nvim_treesitter,
   },
-
+  --
   {
     -- used to install lsp servers, formatters, linters and debug adapters
     "williamboman/mason.nvim",
@@ -47,36 +46,6 @@ local plugins = {
     event = "InsertEnter",
     config = function()
       require("better_escape").setup()
-    end,
-  },
-
-  {
-    -- format files on save
-    "rust-lang/rust.vim",
-    ft = "rust",
-    enabled = true,
-    init = function()
-      vim.g.rustfmt_autosave = 1
-    end,
-  },
-  {
-    -- rust tools
-    "simrat39/rust-tools.nvim",
-    ft = "rust",
-    dependencies = {
-      { "neovim/nvim-lspconfig" },
-      {
-        "rcarriga/nvim-dap-ui",
-      },
-      {
-        "nvim-lua/plenary.nvim",
-      },
-    },
-    opts = function()
-      require "custom.configs.rust-tools"
-    end,
-    config = function(_, opts)
-      require("rust-tools").setup(opts)
     end,
   },
 
@@ -122,6 +91,39 @@ local plugins = {
     -- grammar checking
     "rhysd/vim-grammarous",
   },
+
+  --
+  -- Rust
+  --
+  {
+    -- format files on save
+    "rust-lang/rust.vim",
+    ft = "rust",
+    enabled = true,
+    init = function()
+      vim.g.rustfmt_autosave = 1
+    end,
+  },
+  {
+    -- rust tools
+    "simrat39/rust-tools.nvim",
+    ft = "rust",
+    dependencies = {
+      { "neovim/nvim-lspconfig" },
+      {
+        "rcarriga/nvim-dap-ui",
+      },
+      {
+        "nvim-lua/plenary.nvim",
+      },
+    },
+    opts = function()
+      require "custom.configs.rust-tools"
+    end,
+    config = function(_, opts)
+      require("rust-tools").setup(opts)
+    end,
+  },
   {
     -- cargo crates management
     "saecki/crates.nvim",
@@ -140,17 +142,6 @@ local plugins = {
       local crates = require "crates"
       crates.setup(opts)
       crates.show()
-    end,
-  },
-  {
-    -- autosave
-    "Pocco81/auto-save.nvim",
-    lazy = false,
-    opts = function()
-      require "custom.configs.auto-save"
-    end,
-    config = function(_, opts)
-      require("auto-save").setup(opts)
     end,
   },
 }
