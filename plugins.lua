@@ -91,7 +91,6 @@ local plugins = {
     -- grammar checking
     "rhysd/vim-grammarous",
   },
-
   --
   -- Rust
   --
