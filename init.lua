@@ -7,7 +7,7 @@ auto_cmd({ "VimEnter" }, {
 })
 
 -- autosave on leaving a buffer
-auto_cmd({ "BufLeave", "CmdlineEnter", "CmdWinEnter", "ExitPre" }, {
+auto_cmd({ "BufLeave", "ExitPre" }, {
   pattern = "*",
   command = "update",
 })
