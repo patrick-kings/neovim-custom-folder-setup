@@ -1,11 +1,12 @@
 local on_attach = require("plugins.configs.lspconfig").on_attach
+
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local util = require "lspconfig/util"
 
 local lspconfig = require "lspconfig"
 
-local servers = { "html", "cssls", "clangd",  }
+local servers = { "html", "cssls", "clangd" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -50,3 +51,12 @@ lspconfig.gopls.setup {
     },
   },
 }
+
+lspconfig.tsserver.setup {
+  on_attach = on_attach,
+  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+  cmd = { "typescript-language-server", "--stdio" },
+  capabilities = capabilities,
+}
+
+

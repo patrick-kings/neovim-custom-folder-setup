@@ -44,12 +44,12 @@ M.mason = {
     -- web dev
     "css-lsp",
     "typescript-language-server",
-    'ts-standard',
+    "ts-standard",
     "deno",
     "html-lsp",
     "prettier",
     "svelte-language-server",
-
+    "tailwindcss-language-server",
     -- rust
     "rust-analyzer",
     "codelldb",

@@ -7,13 +7,13 @@ auto_cmd({ "VimEnter" }, {
 })
 
 -- format rust files
-auto_cmd({ "InsertLeave", "BufLeave", "ExitPre" }, {
+auto_cmd({ "BufWritePre" }, {
   pattern = "*.rs",
   command = "RustFmt",
 })
 
 -- autosave on leaving a buffer
-auto_cmd({ "BufLeave", "ExitPre" }, {
+auto_cmd({ "BufLeave", "ExitPre", "CmdlineEnter", 'ModeChanged' }, {
   pattern = "*.*",
   command = "write",
 })
