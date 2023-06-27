@@ -28,8 +28,8 @@ M.nvim_treesitter = {
     "cmake",
   },
 
-  sync_install = false,
-  auto_install = false,
+  sync_install = true,
+  auto_install = true,
   highlight = {
     enable = true,
   },
@@ -44,6 +44,7 @@ M.mason = {
     -- web dev
     "css-lsp",
     "typescript-language-server",
+    'ts-standard',
     "deno",
     "html-lsp",
     "prettier",
