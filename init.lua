@@ -13,7 +13,7 @@ auto_cmd({ "BufWritePre" }, {
 })
 
 -- autosave on leaving a buffer
-auto_cmd({ "BufLeave", "ExitPre", "CmdlineEnter", 'ModeChanged' }, {
+auto_cmd({ "BufLeave", "ExitPre", "CmdlineEnter", 'ModeChanged', 'WinLeave'}, {
   pattern = "*.*",
   command = "write",
 })
