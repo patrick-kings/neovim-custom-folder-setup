@@ -13,6 +13,8 @@ M.nvim_treesitter = {
     "markdown",
     "tsx",
     "json",
+    'jsonc',
+    'java',
     "toml",
     "yaml",
     "c",
