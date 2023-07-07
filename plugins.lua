@@ -45,15 +45,6 @@ local plugins = {
       end,
     },
   },
-  {
-    "max397574/better-escape.nvim",
-    enabled = true,
-    event = "InsertEnter",
-    config = function()
-      require("better_escape").setup()
-    end,
-  },
-
   -- debugging -----------------------
   {
     "rcarriga/nvim-dap-ui",
@@ -95,6 +86,9 @@ local plugins = {
   {
     -- grammar checking
     "rhysd/vim-grammarous",
+    config = function()
+      require("vim-grammarous").setup()
+    end,
   },
   --
   -- Rust
