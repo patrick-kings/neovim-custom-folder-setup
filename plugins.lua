@@ -148,6 +148,7 @@ local plugins = {
       require("image_preview").setup()
     end,
   },
+  
 }
 
 return plugins

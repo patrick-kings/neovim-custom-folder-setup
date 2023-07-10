@@ -12,13 +12,10 @@ auto_cmd({ "BufWritePre" }, {
   command = "RustFmt",
 })
 
--- autosave on leaving a buffer
-auto_cmd({ "BufLeave", "ExitPre", "CmdlineEnter", "ModeChanged", "WinLeave" }, {
-  pattern = "*.*",
-  command = "update",
-})
-
-auto_cmd({ "BufLeave", "WinLeave" }, {
+auto_cmd({
+  "FocusLost",
+  "BufLeave",
+}, {
   pattern = "*.*",
   command = "write",
 })
