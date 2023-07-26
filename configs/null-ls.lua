@@ -26,8 +26,6 @@ local sources = {
   -- rust
   b.formatting.rustfmt,
 
-  -- toml
-  b.formatting.treefmt,
 }
 
 null_ls.setup {

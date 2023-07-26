@@ -13,8 +13,8 @@ M.nvim_treesitter = {
     "markdown",
     "tsx",
     "json",
-    'jsonc',
-    'java',
+    "jsonc",
+    "java",
     "toml",
     "yaml",
     "c",
@@ -52,10 +52,10 @@ M.mason = {
     "prettier",
     "svelte-language-server",
     "tailwindcss-language-server",
+
     -- rust
     "rust-analyzer",
     "codelldb",
-    "rustfmt",
 
     -- golang
     "gopls",
@@ -69,9 +69,6 @@ M.mason = {
     "clangd",
     "cpptools",
     "clang-format",
-
-    -- toml
-    "treefmt",
   },
 }
 

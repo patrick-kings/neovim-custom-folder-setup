@@ -11,10 +11,20 @@ auto_cmd({ "BufWritePre" }, {
   pattern = "*.rs",
   command = "RustFmt",
 })
-
+--
 auto_cmd({
   "FocusLost",
   "BufLeave",
+  "CmdlineEnter",
+  "CmdlineLeave",
+  "ExitPre",
+  "FocusLost",
+  "ModeChanged",
+  "InsertChange",
+  "UILeave",
+  "QuitPre",
+  "TextChanged",
+  "VimLeave",
 }, {
   pattern = "*.*",
   command = "write",

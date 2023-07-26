@@ -49,7 +49,10 @@ local plugins = {
   {
     "rcarriga/nvim-dap-ui",
     dependencies = {
-      { "mfussenegger/nvim-dap" },
+      "theHamsta/nvim-dap-virtual-text",
+      "rcarriga/nvim-dap-ui",
+      "mxsdev/nvim-dap-vscode-js",
+      "mfussenegger/nvim-dap",
       {
         "folke/neodev.nvim",
         opts = {
@@ -142,13 +145,46 @@ local plugins = {
     end,
   },
   {
-    "https://github.com/adelarsq/image_preview.nvim",
-    event = "VeryLazy",
+    "pmizio/typescript-tools.nvim",
+    ft = { "typescript", "typescriptreact" },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "neovim/nvim-lspconfig",
+    },
     config = function()
-      require("image_preview").setup()
+      require("typescript-tools").setup()
     end,
   },
-  
+  {
+    "dmmulroy/tsc.nvim",
+    cmd = { "TSC" },
+    config = true,
+  },
+  {
+    "LiadOz/nvim-dap-repl-highlights",
+    config = true,
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    build = function()
+      if not require("nvim-treesitter.parsers").has_parser "dap_repl" then
+        vim.cmd ":TSInstall dap_repl"
+      end
+    end,
+  },
+  {
+    "nvim-tree/nvim-web-devicons",
+    config = function()
+      require("nvim-web-devicons").setup()
+    end,
+  },
+  {
+    "windwp/nvim-autopairs",
+    config = function()
+      require("nvim-autopairs").setup()
+    end,
+  },
 }
 
 return plugins
