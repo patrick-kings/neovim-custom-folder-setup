@@ -145,17 +145,6 @@ local plugins = {
     end,
   },
   {
-    "pmizio/typescript-tools.nvim",
-    ft = { "typescript", "typescriptreact" },
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "neovim/nvim-lspconfig",
-    },
-    config = function()
-      require("typescript-tools").setup()
-    end,
-  },
-  {
     "dmmulroy/tsc.nvim",
     cmd = { "TSC" },
     config = true,

@@ -21,6 +21,7 @@ auto_cmd({
   "FocusLost",
   "ModeChanged",
   "InsertChange",
+  "InsertLeave",
   "UILeave",
   "QuitPre",
   "TextChanged",
