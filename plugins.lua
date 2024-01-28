@@ -76,8 +76,26 @@ local plugins = {
     dependencies = {
       "rcarriga/nvim-dap-ui",
     },
-    config = function()
-      require("dap-go").setup()
+    opts = {
+      dap_configurations = {
+        {
+          type = "go",
+          name = "Attach remote",
+          mode = "remote",
+          request = "attach",
+        },
+      },
+      delve = {
+        path = "dlv",
+        initialize_timeout_sec = 20,
+        port = "${port}",
+        args = {},
+
+        build_flags = "",
+      },
+    },
+    config = function(_, opts)
+      require("dap-go").setup(opts)
     end,
   },
   {
@@ -101,7 +119,7 @@ local plugins = {
     "rust-lang/rust.vim",
     ft = "rust",
     init = function()
-      vim.g.rustfmt_autosave = 1
+      vim.g.rustfmt_autosave = 0
     end,
   },
   {
@@ -145,11 +163,6 @@ local plugins = {
     end,
   },
   {
-    "dmmulroy/tsc.nvim",
-    cmd = { "TSC" },
-    config = true,
-  },
-  {
     "LiadOz/nvim-dap-repl-highlights",
     config = true,
     dependencies = {
@@ -162,6 +175,20 @@ local plugins = {
       end
     end,
   },
+
+  -- refactoring
+  {
+    "ThePrimeagen/refactoring.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("refactoring").setup()
+    end,
+  },
+
+  -- icons
   {
     "nvim-tree/nvim-web-devicons",
     config = function()
@@ -173,6 +200,17 @@ local plugins = {
     config = function()
       require("nvim-autopairs").setup()
     end,
+  },
+
+  -- markdown preview
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app && yarn install",
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
   },
 }
 
