@@ -53,6 +53,7 @@ local plugins = {
       "rcarriga/nvim-dap-ui",
       "mxsdev/nvim-dap-vscode-js",
       "mfussenegger/nvim-dap",
+      "nvim-neotest/nvim-nio",
       {
         "folke/neodev.nvim",
         opts = {
