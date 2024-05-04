@@ -45,12 +45,10 @@ M.mason = {
 
     -- web dev
     "css-lsp",
-    "typescript-language-server",
     "ts-standard",
     "deno",
     "html-lsp",
     "prettier",
-    "svelte-language-server",
     "tailwindcss-language-server",
 
     -- rust
@@ -64,11 +62,22 @@ M.mason = {
     "goimports-reviser",
     "golines",
     "gomodifytags",
+    "go-debug-adapter",
 
     -- c/cpp
     "clangd",
     "cpptools",
     "clang-format",
+    "cmake-language-server",
+    "cmakelang",
+    "cmakelint",
+    "cpplint",
+
+    "sqlfmt",
+
+    "yaml-language-server",
+
+    "bash-language-server"
   },
 }
 

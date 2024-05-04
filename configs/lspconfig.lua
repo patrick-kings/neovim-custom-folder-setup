@@ -54,9 +54,11 @@ lspconfig.gopls.setup {
 
 lspconfig.tsserver.setup {
   on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-  cmd = { "typescript-language-server", "--stdio" },
   capabilities = capabilities,
 }
 
-
+lspconfig.cmake.setup {}
+lspconfig.tailwindcss.setup {}
+lspconfig.postgres_lsp.setup {}
+lspconfig.docker_compose_language_service.setup {}
+lspconfig.bashls.setup{}

@@ -7,26 +7,21 @@ local auto_cmd = vim.api.nvim_create_autocmd
 -- })
 
 -- format rust files
-auto_cmd({ "BufWritePre" }, {
-  pattern = "*.rs",
-  command = "RustFmt",
-})
+-- auto_cmd({ "BufWritePre" }, {
+--   pattern = "*.rs",
+--   command = "RustFmt",
+-- })
 --
+
+-- save files automatically
 auto_cmd({
   "FocusLost",
   "BufLeave",
-  "CmdlineEnter",
-  "CmdlineLeave",
   "ExitPre",
-  "FocusLost",
-  "ModeChanged",
-  "InsertChange",
-  "InsertLeave",
   "UILeave",
   "QuitPre",
-  "TextChanged",
   "VimLeave",
 }, {
-  pattern = "*.*",
+  pattern = "*.*, ?akefile*",
   command = "write",
 })
