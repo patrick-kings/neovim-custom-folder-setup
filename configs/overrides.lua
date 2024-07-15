@@ -50,6 +50,10 @@ M.mason = {
     "html-lsp",
     "prettier",
     "tailwindcss-language-server",
+    "eslint-lsp",
+
+    -- zig
+    "zls",
 
     -- rust
     "rust-analyzer",
@@ -77,7 +81,7 @@ M.mason = {
 
     "yaml-language-server",
 
-    "bash-language-server"
+    "bash-language-server",
   },
 }
 

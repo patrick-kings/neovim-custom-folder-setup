@@ -6,7 +6,24 @@ local util = require "lspconfig/util"
 
 local lspconfig = require "lspconfig"
 
-local servers = { "html", "cssls", "clangd" }
+local servers = {
+  "html",
+  "cssls",
+
+  "clangd",
+  "cmake",
+
+  "zls",
+
+  "tsserver",
+  "tailwindcss",
+  "eslint-lsp",
+
+  "postgres_lsp",
+
+  "bashls",
+  "docker_compose_language_service",
+}
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -51,14 +68,3 @@ lspconfig.gopls.setup {
     },
   },
 }
-
-lspconfig.tsserver.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
-
-lspconfig.cmake.setup {}
-lspconfig.tailwindcss.setup {}
-lspconfig.postgres_lsp.setup {}
-lspconfig.docker_compose_language_service.setup {}
-lspconfig.bashls.setup{}

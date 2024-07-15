@@ -32,6 +32,7 @@ local plugins = {
     opts = overrides.mason,
   },
   {
+    -- sidebar file browser
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
 
@@ -73,6 +74,7 @@ local plugins = {
     end,
   },
   {
+    -- go debug
     "leoluz/nvim-dap-go",
     dependencies = {
       "rcarriga/nvim-dap-ui",
@@ -112,14 +114,24 @@ local plugins = {
       require("vim-grammarous").setup()
     end,
   },
-  --
-  -- Rust
-  --
   {
-    -- format files on save
+    --
+    -- zig
+    --
+    "ziglang/zig.vim",
+    config = function()
+      require("zig").setup()
+    end,
+  },
+
+  {
+    --
+    -- Rust
+    --
     "rust-lang/rust.vim",
     ft = "rust",
     init = function()
+    -- format files on save
       vim.g.rustfmt_autosave = 0
     end,
   },

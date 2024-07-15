@@ -20,9 +20,16 @@ opt.autowriteall = true
 -- save files automatically
 auto_cmd({
   "TextChanged",
+  "InsertLeave",
+  "InsertChange",
+  "ModeChanged",
+
   "FocusLost",
   "BufLeave",
+
   "CmdlineEnter",
+  "CmdWinEnter",
+
   "ExitPre",
   "UILeave",
   "QuitPre",
