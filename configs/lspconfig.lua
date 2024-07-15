@@ -1,10 +1,12 @@
-local on_attach = require("plugins.configs.lspconfig").on_attach
-
-local capabilities = require("plugins.configs.lspconfig").capabilities
+local lspconfig = require "lspconfig"
 
 local util = require "lspconfig/util"
 
-local lspconfig = require "lspconfig"
+local lsp_c = require "plugins.configs.lspconfig"
+
+local on_attach = lsp_c.on_attach
+
+local capabilities = lsp_c.capabilities
 
 local servers = {
   "html",
@@ -17,7 +19,6 @@ local servers = {
 
   "tsserver",
   "tailwindcss",
-  "eslint-lsp",
 
   "postgres_lsp",
 
