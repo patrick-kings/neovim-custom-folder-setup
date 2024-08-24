@@ -83,22 +83,22 @@ local plugins = {
       dap_configurations = {
         {
           type = "go",
-          name = "Attach remote",
-          mode = "remote",
-          request = "attach",
+          name = "debug",
+          request = "launch",
         },
       },
       delve = {
+        detached = false,
         path = "dlv",
-        initialize_timeout_sec = 20,
-        port = "${port}",
-        args = {},
-
-        build_flags = "",
+        -- initialize_timeout_sec = 20,
+        -- port = "${port}",
+        -- args = {},
+        -- build_flags = "",
       },
     },
     config = function(_, opts)
       require("dap-go").setup(opts)
+      require("dap").set_log_level "TRACE"
     end,
   },
   {
@@ -131,7 +131,7 @@ local plugins = {
     "rust-lang/rust.vim",
     ft = "rust",
     init = function()
-    -- format files on save
+      -- format files on save
       vim.g.rustfmt_autosave = 0
     end,
   },
